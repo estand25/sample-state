@@ -1,5 +1,10 @@
 import React from 'react';
-import { Text, View, Button } from 'react-native';
+import {
+  Text,
+  View,
+  Button,
+  LayoutAnimation
+} from 'react-native';
 
 const springAnimationProperties = {
   type: 'spring',
@@ -18,6 +23,10 @@ class SizeAble extends React.Component {
   state = {
     edgeLength: 10,
   };
+
+  componentWillUpdate(){
+    LayoutAnimation.configureNext(animationConfig);
+  }
 
   grow = () => this.setState({ edgeLength: this.state.edgeLength * 2 });
   shrink = () => this.setState({ edgeLength: this.state.edgeLength / 2 });
@@ -47,3 +56,4 @@ const styles = {
 }
 
 export default SizeAble;
+// https://blog.callstack.io/react-native-animations-revisited-part-i-783143d4884
