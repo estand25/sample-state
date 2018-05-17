@@ -1,11 +1,12 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
+import Blink from './src/components/Blink';
 
 export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Adding State</Text>
+        <Blink text='I love to blink' />
       </View>
     );
   }
