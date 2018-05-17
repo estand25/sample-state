@@ -6,10 +6,10 @@ import SizeAble from './src/components/SizeAble';
 export default class App extends React.Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Blink text='I love to blink' />
+      // <View style={styles.container}>
+      //   <Blink text='I love to blink' />
         <SizeAble />
-      </View>
+      // </View>
     );
   }
 }

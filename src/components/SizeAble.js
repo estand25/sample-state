@@ -1,10 +1,23 @@
 import React from 'react';
 import { Text, View, Button } from 'react-native';
 
+const springAnimationProperties = {
+  type: 'spring',
+  springDamping: 0.4,
+  property: 'opacity',
+}
+
+const animationConfig = {
+  duration: 700,
+  create: springAnimationProperties,
+  update: springAnimationProperties,
+  delete: springAnimationProperties,
+};
+
 class SizeAble extends React.Component {
   state = {
     edgeLength: 10,
-  }
+  };
 
   grow = () => this.setState({ edgeLength: this.state.edgeLength * 2 });
   shrink = () => this.setState({ edgeLength: this.state.edgeLength / 2 });
@@ -13,7 +26,7 @@ class SizeAble extends React.Component {
     const { edgeLength } = this.state;
 
     return (
-      <View style={{ flex: 1 }}>
+      <View style={{ flex: 1, backgroundColor: '#F5FCFF' }}>
         <View style={styles.container}>
           <Button onPress={this.grow} title='Enlarge' />
           <Button onPress={this.shrink} title='Shrink' />
