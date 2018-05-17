@@ -1,17 +1,15 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 // import Blink from './src/components/Blink';
-import { Enlarge } from './src/components/Enlarge';
+import SizeAble from './src/components/SizeAble';
 
 export default class App extends React.Component {
   render() {
     return (
-      // <View style={styles.container}>
-      //   <Blink text='I love to blink' />
-      // </View>
-      // <View>
-        <Enlarge />
-      // </View>
+      <View style={styles.container}>
+        <Blink text='I love to blink' />
+        <SizeAble />
+      </View>
     );
   }
 }
