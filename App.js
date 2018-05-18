@@ -7,8 +7,10 @@ export default class App extends React.Component {
   render() {
     return (
       <View style={{flex: 1 }}>
-        <Blink style={{flex: 1, paddingTop: 55}} text='I love to blink' />
-        <SizeAble style={{flex: 2}} />
+        <View style={{borderStyle:'solid', padding: 15 }}>
+          <Blink text='I love to blink' />
+        </View>
+        <SizeAble />
       </View>
     );
   }

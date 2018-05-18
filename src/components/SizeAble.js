@@ -22,6 +22,7 @@ const animationConfig = {
 class SizeAble extends React.Component {
   state = {
     edgeLength: 10,
+    direction: 'row',
   };
 
   componentWillUpdate(){
@@ -30,17 +31,27 @@ class SizeAble extends React.Component {
 
   grow = () => this.setState({ edgeLength: this.state.edgeLength * 2 });
   shrink = () => this.setState({ edgeLength: this.state.edgeLength / 2 });
+  direction = () => this.setState({ direction: this.state.direction == 'column' ? 'row' : 'column'})
 
   render(){
-    const { edgeLength } = this.state;
+    const { edgeLength, direction } = this.state;
 
     return (
       <View style={{ flex: 1, backgroundColor: '#F5FCFF' }}>
         <View style={styles.container}>
           <Button onPress={this.grow} title='Enlarge' />
           <Button onPress={this.shrink} title='Shrink' />
+          <Button onPress={this.direction} title='Switch Direction' />
+          <Text>Direction: {direction}</Text>
         </View>
-        <View style={{ flex: 2, height: edgeLength, width: edgeLength, backgroundColor: 'blue'}}/>
+        <View style={{ flex: 2,
+                       flexDirection: direction,
+                       alignItems: 'center',
+                       flexWrap: 'wrap' }}>
+          <View style={{height: edgeLength,
+                        width: edgeLength,
+                        backgroundColor: 'blue'}}/>
+        </View>
       </View>
     );
   }
