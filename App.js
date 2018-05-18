@@ -1,26 +1,13 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import Blink from './src/components/Blink';
-import SizeAble from './src/components/SizeAble';
+import { Text, View } from 'react-native';
+import Page1 from './src/pages/Page1';
 
 export default class App extends React.Component {
   render() {
     return (
       <View style={{flex: 1 }}>
-        <View style={{borderStyle:'solid', padding: 15 }}>
-          <Blink text='I love to blink' />
-        </View>
-        <SizeAble />
+        <Page1 />
       </View>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
