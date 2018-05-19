@@ -5,15 +5,17 @@ import SizeAble from '../components/SizeAble';
 
 class Page1 extends React.Component {
   render() {
+    const { navigation } = this.props;
+    const title = navigation.getParam('paramTitle','No title passed');
     return (
       <View style={{ flex: 1}}>
         <View style={{
           borderStyle: 'solid',
           paddingTop: 20,
           justifyContent:'center',
-          alignItems: 'center'
+          alignItems: 'center',
         }}>
-          <Blink text='Page 1'/>
+          <Blink text={title}/>
         </View>
         <SizeAble />
       </View>

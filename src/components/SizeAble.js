@@ -2,9 +2,9 @@ import React from 'react';
 import {
   Text,
   View,
-  Button,
   LayoutAnimation
 } from 'react-native';
+import Button from 'react-native-flat-button';
 
 const springAnimationProperties = {
   type: 'spring',
@@ -54,9 +54,27 @@ class SizeAble extends React.Component {
     return (
       <View style={{ flex: 1, backgroundColor: '#F5FCFF' }}>
         <View style={styles.container}>
-          <Button onPress={this.grow} title='Enlarge' />
-          <Button onPress={this.shrink} title='Shrink' />
-          <Button onPress={this.direction} title='Switch Direction' />
+          <Button
+            containerStyle={styles.buttonStyle}
+            onPress={this.grow}
+            type="positive"
+            >
+            Grow
+          </Button>
+          <Button
+            containerStyle={styles.buttonStyle}
+            onPress={this.shrink}
+            type="negative"
+            >
+            Shrink
+          </Button>
+          <Button
+            containerStyle={styles.buttonStyle}
+            onPress={this.direction}
+            type="neutral"
+            >
+            Switch Direction
+          </Button>
           <Text>Direction: {direction}</Text>
           <Text>Length: {edgeLength} </Text>
         </View>
@@ -79,7 +97,12 @@ const styles = {
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
-  }
+  },
+  buttonStyle: {
+    width: 200,
+    height: 30,
+    marginVertical: 5
+  },
 }
 
 export default SizeAble;
