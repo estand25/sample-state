@@ -9,19 +9,40 @@ class Menu extends React.Component {
 
   render() {
     const btnTitle = "Growing and Shrinking";
-    const { containerStyle, buttonStyle } = styles;
+    const { containerStyle, subContainerStyle, buttonStyle } = styles;
     return (
       <View
         style={containerStyle}>
-        <Button
-          containerStyle={buttonStyle}
-          type="primary"
-          onPress={() => this.props.navigation.navigate('Page1',{
-            paramTitle: "Growing and Shrinking"
-          })}
-          >
-            Growing and Shrinking
+        <View
+          style={subContainerStyle}>
+          <Button
+            containerStyle={buttonStyle}
+            type="primary"
+            onPress={() => this.props.navigation.navigate('Page1',{
+              paramTitle: "Growing and Shrinking"
+            })}
+            >
+              Growing and Shrinking
           </Button>
+          <Button
+              containerStyle={buttonStyle}
+              type="primary"
+              onPress={() => this.props.navigation.navigate('Page2',{
+                paramTitle: "Going Around"
+              })}
+              >
+                Going Around
+          </Button>
+          <Button
+              containerStyle={buttonStyle}
+              type="primary"
+              onPress={() => this.props.navigation.navigate('Page3',{
+                paramTitle: "Move Around"
+              })}
+              >
+                Move Around
+          </Button>
+        </View>
       </View>
     );
   }
@@ -33,6 +54,12 @@ const styles = {
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#181c36',
+  },
+  subContainerStyle: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#0077b3',
+    padding: 20
   },
   buttonStyle: {
     width: 200,

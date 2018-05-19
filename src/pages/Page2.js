@@ -1,19 +1,20 @@
 import React from 'react';
-import { View } from 'react-native';
+import { Text, View } from 'react-native';
+import { Button } from 'react-native-flat-button';
 import Blink from '../components/Blink';
-import SizeAble from '../components/SizeAble';
+import RotationAble from '../components/RotationAble';
 
-class Page1 extends React.Component {
+class Page2 extends React.Component {
   render() {
     const { navigation } = this.props;
     const title = navigation.getParam('paramTitle','No title passed');
     
     return (
-      <View style={{ flex: 1}}>
+      <View style={{ flex: 1 }}>
         <View style={styles.blinkStyle}>
-          <Blink text={title}/>
+          <Blink text={title} />
         </View>
-        <SizeAble />
+        <RotationAble />
       </View>
     );
   }
@@ -29,4 +30,4 @@ const styles = {
   }
 }
 
-export default Page1;
+export default Page2;

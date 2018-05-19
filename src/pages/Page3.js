@@ -1,21 +1,21 @@
 import React from 'react';
 import { View } from 'react-native';
 import Blink from '../components/Blink';
-import SizeAble from '../components/SizeAble';
+import MoveAble from '../components/MoveAble';
 
-class Page1 extends React.Component {
-  render() {
+class Page3 extends React.Component {
+  render(){
     const { navigation } = this.props;
-    const title = navigation.getParam('paramTitle','No title passed');
-    
+    const title = navigation.getParam('paramTitle', 'No title passed');
+
     return (
       <View style={{ flex: 1}}>
         <View style={styles.blinkStyle}>
-          <Blink text={title}/>
+          <Blink text={title} />
         </View>
-        <SizeAble />
+        <MoveAble />
       </View>
-    );
+    )
   }
 }
 
@@ -29,4 +29,4 @@ const styles = {
   }
 }
 
-export default Page1;
+export default Page3;

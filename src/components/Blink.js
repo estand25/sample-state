@@ -15,7 +15,7 @@ class Blink extends React.Component {
 
   render() {
     let display = this.state.isShowingText ? this.props.text: ' ';
-    
+
     return (
       <Text>{display}</Text>
     )
