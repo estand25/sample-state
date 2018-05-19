@@ -14,6 +14,7 @@ class Page1 extends React.Component {
           paddingTop: 20,
           justifyContent:'center',
           alignItems: 'center',
+          backgroundColor: '#F5FCFF' 
         }}>
           <Blink text={title}/>
         </View>
