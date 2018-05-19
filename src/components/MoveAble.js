@@ -2,6 +2,10 @@ import React from 'react';
 import {
   View,
   Text,
+  PanResponder,
+  Animated,
+  Easing,
+  Dimensions
 } from 'react-native';
 
 class MoveAble extends React.Component {
@@ -20,7 +24,7 @@ class MoveAble extends React.Component {
         dx : this.state.pan.x,
         dy : this.state.pan.y
       }]),
-      onPanResponderRelease: (e.gesture) => {
+      onPanResponderRelease: (e, gesture) => {
         if(this.isDropZone(gesture)){
           this.setState({
             showDraggable : false
@@ -37,7 +41,7 @@ class MoveAble extends React.Component {
 
   isDropZone(gesture){
     var dz = this.state.dropZoneValues;
-    return gesture.moveY > dz.y && return gesture.moveY < dz.y + dz.height;
+    return gesture.moveY > dz.y && gesture.moveY < dz.y + dz.height;
   }
 
   setDropZoneValues(event){
@@ -51,8 +55,7 @@ class MoveAble extends React.Component {
       <View style={styles.mainContainer}>
         <View
           onLayout={this.setDropZoneValues.bind(this)}
-          style={style.dropZone}>
-          <Text style={styles.text}>Move Around</Text>
+          style={styles.dropZone}>
         </View>
         {this.renderDraggable()}
       </View>
@@ -62,7 +65,7 @@ class MoveAble extends React.Component {
   renderDraggable(){
     if(this.state.showDraggable){
       return(
-        <View style={style.draggableContainer}>
+        <View style={styles.draggableContainer}>
           <Animated.View
             {...this.panResponder.panHandlers}
             style={[this.state.pan.getLayout(), styles.circle]}>
@@ -98,10 +101,10 @@ let styles = {
     left: Window.width/2 - CIRCLE_RADIUS,
   },
   circle: {
-    backgroundColor: '#0077b3'
+    backgroundColor: '#0077b3',
     width: CIRCLE_RADIUS*2,
     height: CIRCLE_RADIUS*2,
-    borderRadisu: CIRCLE_RADIUS
+    borderRadius: CIRCLE_RADIUS
   }
 };
 

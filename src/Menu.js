@@ -18,8 +18,9 @@ class Menu extends React.Component {
           <Button
             containerStyle={buttonStyle}
             type="primary"
-            onPress={() => this.props.navigation.navigate('Page1',{
-              paramTitle: "Growing and Shrinking"
+            onPress={() => this.props.navigation.navigate('Page',{
+              paramTitle: "Growing and Shrinking",
+              paramObject: "SizeAble"
             })}
             >
               Growing and Shrinking
@@ -27,8 +28,9 @@ class Menu extends React.Component {
           <Button
               containerStyle={buttonStyle}
               type="primary"
-              onPress={() => this.props.navigation.navigate('Page2',{
-                paramTitle: "Going Around"
+              onPress={() => this.props.navigation.navigate('Page',{
+                paramTitle: "Going Around",
+                paramObject: "RotationAble"
               })}
               >
                 Going Around
@@ -36,8 +38,9 @@ class Menu extends React.Component {
           <Button
               containerStyle={buttonStyle}
               type="primary"
-              onPress={() => this.props.navigation.navigate('Page3',{
-                paramTitle: "Move Around"
+              onPress={() => this.props.navigation.navigate('Page',{
+                paramTitle: "Move Around",
+                paramObject: "MoveAble"
               })}
               >
                 Move Around
