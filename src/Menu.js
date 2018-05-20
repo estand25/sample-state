@@ -10,14 +10,14 @@ class Menu extends React.Component {
 
   render() {
     const btnTitle = "Growing and Shrinking";
-    const { containerStyle, subContainerStyle, buttonStyle } = styles;
+    const { containerStyle, subMenuContainerStyle, buttonMenuStyle } = styles;
     return (
       <View
         style={containerStyle}>
         <View
-          style={subContainerStyle}>
+          style={subMenuContainerStyle}>
           <Button
-            containerStyle={buttonStyle}
+            containerStyle={buttonMenuStyle}
             type="primary"
             onPress={() => this.props.navigation.navigate('Page',{
               paramTitle: "Growing and Shrinking",
@@ -27,7 +27,7 @@ class Menu extends React.Component {
               Growing and Shrinking
           </Button>
           <Button
-              containerStyle={buttonStyle}
+              containerStyle={buttonMenuStyle}
               type="primary"
               onPress={() => this.props.navigation.navigate('Page',{
                 paramTitle: "Going Around",
@@ -37,7 +37,7 @@ class Menu extends React.Component {
                 Going Around
           </Button>
           <Button
-              containerStyle={buttonStyle}
+              containerStyle={buttonMenuStyle}
               type="primary"
               onPress={() => this.props.navigation.navigate('Page',{
                 paramTitle: "Move Around",

@@ -6,6 +6,7 @@ import Blink from '../components/Blink';
 import SizeAble from '../components/SizeAble';
 import RotationAble from '../components/RotationAble';
 import MoveAble from '../components/MoveAble';
+import styles from '../Styles';
 
 class Page extends React.Component {
   render() {
@@ -28,16 +29,6 @@ class Page extends React.Component {
         <Main />
       </View>
     );
-  }
-}
-
-const styles = {
-  blinkStyle: {
-    borderStyle: 'solid',
-    paddingTop: 20,
-    justifyContent:'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF'
   }
 }
 

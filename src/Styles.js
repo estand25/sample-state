@@ -20,12 +20,23 @@ export default StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#0077b3',
-    padding: 20
+    padding: 7
+  },
+  subMenuContainerStyle: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#0077b3',
+    padding: 10
   },
   buttonStyle: {
     width: 200,
-    height: 50,
+    height: 30,
     marginVertical: 5
+  },
+  buttonMenuStyle: {
+    width: 200,
+    height: 50,
+    marginVertical: 10
   },
   textStyle: {
     textAlign: 'center',
@@ -62,5 +73,12 @@ export default StyleSheet.create({
     width: CIRCLE_RADIUS*2,
     height: CIRCLE_RADIUS*2,
     borderRadius: CIRCLE_RADIUS
+  },
+  blinkStyle: {
+    borderStyle: 'solid',
+    paddingTop: 20,
+    justifyContent:'center',
+    alignItems: 'center',
+    backgroundColor: '#F5FCFF'
   }
 });

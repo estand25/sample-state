@@ -12,7 +12,9 @@ import styles from '../Styles';
 class RotationAble extends React.Component {
   state = {
     direction: true,
+    isPause: false,
   }
+
   constructor () {
       super()
       this.spinValue = new Animated.Value(0)
@@ -34,18 +36,36 @@ class RotationAble extends React.Component {
     ).start(() => this.spin())
   }
 
-  forward = () => this.setState({ direction: true });
-  backward = () => this.setState({ direction: false });
+  forward = () => {
+    this.setState({ direction: true });
+    this.setState({ isPause: false });
+  }
+  backward = () => {
+    this.setState({ direction: false });
+    this.setState({ isPause: false });
+  }
+  pause = () => {
+    const { isPause } = this.state;
+    this.setState({ isPause: isPause ? false : true })
+  }
 
   render() {
-    const { direction } = this.state;
-    const leftDeg = !direction ? '360deg' : '0deg';
-    const rightDeg = direction ? '360deg' : '0deg';
+    const { direction, isPause } = this.state;
+    var leftDeg = !direction ? '360deg' : '0deg';
+    var rightDeg = direction ? '360deg' : '0deg';
+    var pauseText = 'Not Pause';
+
+    if(isPause) {
+      pauseText = 'Pause';
+      leftDeg = '0deg';
+      rightDeg = '0deg';
+    }
 
     const spin = this.spinValue.interpolate({
       inputRange: [ 0, 1],
       outputRange: [ leftDeg, rightDeg ]
     })
+
     return (
       <View style={styles.containerStyle}>
         <View style={styles.subContainerStyle}>
@@ -60,6 +80,13 @@ class RotationAble extends React.Component {
             onPress={this.backward}
             type="negative">
             Reveser
+          </Button>
+          <Button
+            containerStyle={styles.buttonStyle}
+            onPress={this.pause}
+            type="neutral"
+            >
+            {pauseText}
           </Button>
         </View>
         <Animated.Image
