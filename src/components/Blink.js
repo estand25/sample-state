@@ -1,5 +1,6 @@
 import React from 'react';
 import { Text, View } from 'react-native';
+import styles from '../Styles';
 
 class Blink extends React.Component {
   constructor(props){
@@ -12,12 +13,19 @@ class Blink extends React.Component {
       });
     }, 1000);
   }
+  componentWillUnmount() {
+    this.setState({isShowingText: false})
+  }
 
   render() {
     let display = this.state.isShowingText ? this.props.text: ' ';
 
     return (
-      <Text>{display}</Text>
+      <Text
+        style={styles.blinkStyle}
+      >
+        {display}
+      </Text>
     )
   }
 }

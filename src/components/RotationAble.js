@@ -68,7 +68,7 @@ class RotationAble extends React.Component {
 
     return (
       <View style={styles.containerStyle}>
-        <View style={styles.subContainerStyle}>
+        <View style={styles.subContainerStyle_RA}>
           <Button
             containerStyle={styles.buttonStyle}
             onPress={this.forward}

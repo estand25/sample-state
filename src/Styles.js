@@ -22,6 +22,12 @@ export default StyleSheet.create({
     backgroundColor: '#0077b3',
     padding: 7
   },
+  subContainerStyle_RA: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#0077b3',
+    padding: 7
+  },
   subMenuContainerStyle: {
     justifyContent: 'center',
     alignItems: 'center',
@@ -74,11 +80,16 @@ export default StyleSheet.create({
     height: CIRCLE_RADIUS*2,
     borderRadius: CIRCLE_RADIUS
   },
-  blinkStyle: {
+  blinkViewStyle: {
     borderStyle: 'solid',
-    paddingTop: 20,
     justifyContent:'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF'
+    padding: 5,
+    backgroundColor: '#181c36'
+  },
+  blinkStyle: {
+    backgroundColor: '#181c36',
+    color: '#fff',
+    fontWeight: 'bold'
   }
 });

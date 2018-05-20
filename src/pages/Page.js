@@ -1,7 +1,9 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { View } from 'react-native';
 import { Button } from 'react-native-flat-button';
 
+import { changeToObj } from '../actions';
 import Blink from '../components/Blink';
 import SizeAble from '../components/SizeAble';
 import RotationAble from '../components/RotationAble';
@@ -23,7 +25,7 @@ class Page extends React.Component {
     }
     return (
       <View style={{ flex: 1}}>
-        <View style={styles.blinkStyle}>
+        <View style={styles.blinkViewStyle}>
           <Blink text={title} />
         </View>
         <Main />
@@ -32,4 +34,9 @@ class Page extends React.Component {
   }
 }
 
-export default Page;
+const mapStateToProps = ({ demoApp }) => {
+  const { goTo } = demoApp;
+  return { goTo };
+}
+
+export default connect(mapStateToProps, null)(Page);
