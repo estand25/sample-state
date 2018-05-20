@@ -6,8 +6,13 @@ import {
   Image,
   Easing }
 from 'react-native';
+import Button from 'react-native-flat-button';
+import styles from '../Styles';
 
 class RotationAble extends React.Component {
+  state = {
+    direction: true,
+  }
   constructor () {
       super()
       this.spinValue = new Animated.Value(0)
@@ -29,13 +34,34 @@ class RotationAble extends React.Component {
     ).start(() => this.spin())
   }
 
+  forward = () => this.setState({ direction: true });
+  backward = () => this.setState({ direction: false });
+
   render() {
+    const { direction } = this.state;
+    const leftDeg = !direction ? '360deg' : '0deg';
+    const rightDeg = direction ? '360deg' : '0deg';
+
     const spin = this.spinValue.interpolate({
       inputRange: [ 0, 1],
-      outputRange: ['0deg', '360deg']
+      outputRange: [ leftDeg, rightDeg ]
     })
     return (
-      <View style={styles.container}>
+      <View style={styles.containerStyle}>
+        <View style={styles.subContainerStyle}>
+          <Button
+            containerStyle={styles.buttonStyle}
+            onPress={this.forward}
+            type="positive">
+            Forward
+          </Button>
+          <Button
+            containerStyle={styles.buttonStyle}
+            onPress={this.backward}
+            type="negative">
+            Reveser
+          </Button>
+        </View>
         <Animated.Image
           style={{
             width: 227,
@@ -48,12 +74,4 @@ class RotationAble extends React.Component {
   }
 }
 
-const styles = {
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF'
-  }
-}
 export default RotationAble;

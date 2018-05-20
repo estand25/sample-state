@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import Button from 'react-native-flat-button';
+import styles from './Styles';
 
 class Menu extends React.Component {
   static navigationOptions = {
@@ -49,26 +50,6 @@ class Menu extends React.Component {
       </View>
     );
   }
-}
-
-const styles = {
-  containerStyle:  {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#181c36',
-  },
-  subContainerStyle: {
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#0077b3',
-    padding: 20
-  },
-  buttonStyle: {
-    width: 200,
-    height: 50,
-    marginVertical: 5
-  },
 }
 
 export default Menu;

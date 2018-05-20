@@ -5,6 +5,7 @@ import {
   LayoutAnimation
 } from 'react-native';
 import Button from 'react-native-flat-button';
+import styles from '../Styles';
 
 const springAnimationProperties = {
   type: 'spring',
@@ -52,8 +53,8 @@ class SizeAble extends React.Component {
     const width = direction == 'column' ? edgeLength : mSide;
 
     return (
-      <View style={{ flex: 1, backgroundColor: '#F5FCFF' }}>
-        <View style={styles.container}>
+      <View style={styles.containerStyle}>
+        <View style={styles.subContainerStyle}>
           <Button
             containerStyle={styles.buttonStyle}
             onPress={this.grow}
@@ -75,13 +76,14 @@ class SizeAble extends React.Component {
             >
             Switch Direction
           </Button>
-          <Text>Direction: {direction}</Text>
-          <Text>Length: {edgeLength} </Text>
+          <Text style={styles.textStyle}>Direction: {direction}</Text>
+          <Text style={styles.textStyle}>Length: {edgeLength} </Text>
         </View>
         <View style={{ flex: 2,
                        flexDirection: direction,
                        alignItems: 'center',
-                       flexWrap: 'wrap' }}>
+                       flexWrap: 'wrap',
+                       backgroundColor: '#181c36' }}>
           <View style={{height: height,
                         width: width,
                         backgroundColor: 'blue'}}/>
@@ -89,20 +91,6 @@ class SizeAble extends React.Component {
       </View>
     );
   }
-}
-
-const styles = {
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  buttonStyle: {
-    width: 200,
-    height: 30,
-    marginVertical: 5
-  },
 }
 
 export default SizeAble;

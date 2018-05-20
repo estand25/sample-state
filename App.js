@@ -9,6 +9,15 @@ const RootStack = createStackNavigator({
   Page: Page,
 },{
   initialRouteName: 'Menu',
+  navigationOptions: {
+    headerStyle: {
+      backgroundColor: '#0077b3'
+    },
+    headerTintColor: '#fff',
+    headerTitleStyle: {
+      fontWeight: 'bold',
+    },
+  }
 });
 
 export default class App extends React.Component {
