@@ -16,7 +16,7 @@ class CameraAble extends React.Component {
   render() {
     const { hasCameraPermission } = this.state;
     if(hasCameraPermission === null){
-      return <View />;..
+      return <View />;
     } else if (hasCameraPermission === false){
       return <Text>No access to camera</Text>;
     } else {
