@@ -24,7 +24,7 @@ class SizeAble extends React.Component {
   state = {
     edgeLength: 10,
     direction: 'row',
-    maxLength: 400,
+    maxLength: 410,
     minLength: 10,
     mSide: 430
   };
@@ -45,7 +45,7 @@ class SizeAble extends React.Component {
     const { direction, mSide, maxLength } = this.state;
     this.setState({ direction: direction == 'column' ? 'row' : 'column' })
     this.setState({ mSide: direction == 'column' ? 430 : 410 })
-    this.setState({ maxLength: direction == 'column' ? 400 : 380})
+    this.setState({ maxLength: direction == 'column' ? 410 : 380})
   }
 
   render(){

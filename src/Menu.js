@@ -9,8 +9,8 @@ class Menu extends React.Component {
   };
 
   render() {
-    const btnTitle = "Growing and Shrinking";
     const { containerStyle, subMenuContainerStyle, buttonMenuStyle } = styles;
+
     return (
       <View
         style={containerStyle}>
@@ -45,6 +45,16 @@ class Menu extends React.Component {
               })}
               >
                 Move Around
+          </Button>
+          <Button
+              containerStyle={buttonMenuStyle}
+              type="primary"
+              onPress={() => this.props.navigation.navigate('Page',{
+                paramTitle: "Use Camera",
+                paramObject: "CameraAble"
+              })}
+              >
+                Use Camera
           </Button>
         </View>
       </View>

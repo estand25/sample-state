@@ -7,14 +7,14 @@ class Blink extends React.Component {
     super(props);
     this.state = {isShowingText: true};
 
-    setInterval (()  => {
+    this.interval = setInterval (()  => {
       this.setState(previousState => {
         return { isShowingText: !previousState.isShowingText };
       });
     }, 1000);
   }
   componentWillUnmount() {
-    this.setState({isShowingText: false})
+    clearInterval(this.interval);
   }
 
   render() {

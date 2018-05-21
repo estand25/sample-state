@@ -23,6 +23,7 @@ export default StyleSheet.create({
     padding: 7
   },
   subContainerStyle_RA: {
+    flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#0077b3',
@@ -56,7 +57,8 @@ export default StyleSheet.create({
     backgroundColor: '#F5FCFF'
   },
   mainContainer: {
-    flex: 1
+    flex: 1,
+    backgroundColor: '#181c36'
   },
   dropZone: {
     height: 100,

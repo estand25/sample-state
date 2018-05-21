@@ -89,13 +89,15 @@ class RotationAble extends React.Component {
             {pauseText}
           </Button>
         </View>
-        <Animated.Image
-          style={{
-            width: 227,
-            height: 200,
-            transform: [{rotate: spin}] }}
-          source={{uri: 'https://s3.amazonaws.com/media-p.slid.es/uploads/alexanderfarennikov/images/1198519/reactjs.png'}}
-        />
+        <View style={{ flex: 2, padding: 10 }}>  
+          <Animated.Image
+            style={{
+              width: 227,
+              height: 200,
+              transform: [{rotate: spin}] }}
+            source={{uri: 'https://s3.amazonaws.com/media-p.slid.es/uploads/alexanderfarennikov/images/1198519/reactjs.png'}}
+          />
+        </View>
       </View>
     )
   }
