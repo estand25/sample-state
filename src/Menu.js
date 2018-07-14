@@ -64,7 +64,7 @@ class Menu extends React.Component {
                 paramObject: "CalendarAble"
               })}
               >
-                Use Camera
+                Use Calendar
           </Button>
         </View>
       </View>

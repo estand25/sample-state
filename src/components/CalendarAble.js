@@ -12,13 +12,14 @@ import {
 class CalendarAble extends React.Component{
   render(){
     const date = Date();
-    const maxDate = Date('2065-12-01T03:24:00');
+    const minDate = new Date('2018-07-01');
+    const maxDate = new Date('2018-12-01');
 
     return (
       <View>
         <Calendar
-          current={date}
-          minDate={date}
+          // current={date}
+          minDate={minDate}
           maxDate={maxDate}
           onDayPress={(day) => {console.log('Selected day', day)}}
           onDayLongPress={(day) => {console.log('selected long day', day)}}
