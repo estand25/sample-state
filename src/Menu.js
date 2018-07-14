@@ -56,6 +56,16 @@ class Menu extends React.Component {
               >
                 Use Camera
           </Button>
+          <Button
+              containerStyle={buttonMenuStyle}
+              type="primary"
+              onPress={() => this.props.navigation.navigate('Page',{
+                paramTitle: "Use Calendar",
+                paramObject: "CalendarAble"
+              })}
+              >
+                Use Camera
+          </Button>
         </View>
       </View>
     );

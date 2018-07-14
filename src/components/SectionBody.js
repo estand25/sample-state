@@ -3,6 +3,7 @@ import SizeAble from './SizeAble';
 import RotationAble from './RotationAble';
 import MoveAble from './MoveAble';
 import CameraAble from './CameraAble';
+import CalendarAble from './CalendarAble';
 
 SectionBody = (props) => {
   const { pageBody } = props;
@@ -15,6 +16,8 @@ SectionBody = (props) => {
     var Main = MoveAble;
   } else if(pageBody == 'CameraAble'){
     var Main = CameraAble;
+  } else if(pageBody == 'CalendarAble'){
+    var Main = CalendarAble;
   }
 
   return (
